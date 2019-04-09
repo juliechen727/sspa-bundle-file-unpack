@@ -11,6 +11,11 @@ if (environment.production) {
   enableProdMode();
 }
 
+// Somehow I have to add bootstrap part again to make the page show the app
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));
+// End
+
 export default singleSpaAngular({
   bootstrapFunction: () => platformBrowserDynamic().bootstrapModule(AppModule),
   template: '<app-root />',
